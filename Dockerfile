@@ -8,4 +8,5 @@ ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
 COPY . /home/site/wwwroot
 
 RUN cd /home/site/wwwroot && \
-    npm install
+    npm ci && \
+    npm run prod:build
