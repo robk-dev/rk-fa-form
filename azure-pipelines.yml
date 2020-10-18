@@ -45,9 +45,10 @@ stages:
     - script: |
         npm ci
         npm run build:prod
-        cp node_modules bin
-        cp **/*.json bin
       displayName: 'Prepare binaries'
+
+        # cp node_modules bin
+        # cp ./**/*.json bin
 
     # - task: CopyFiles@2
     #   inputs:
