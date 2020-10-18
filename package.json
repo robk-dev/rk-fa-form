@@ -5,7 +5,7 @@
     "build": "tsc",
     "build:prod": "npm run prestart && npm prune --production",
     "watch": "tsc --w",
-    "prestart": "npm run build && func extensions install",
+    "prestart": "npm run build",
     "start:host": "func start",
     "start": "npm-run-all --parallel start:host watch"
   },
