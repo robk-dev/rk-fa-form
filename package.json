@@ -2,7 +2,7 @@
   "name": "cv-page-fa",
   "version": "",
   "scripts": {
-    "build": "tsc && copyfiles --up 1 \"src/**/*.bin\" dist && copyfiles *.json bin",
+    "build": "tsc && copyfiles --up 1 \"src/**/*.json\" bin && copyfiles *.json bin",
     "build:prod": "npm run prestart && npm prune --production",
     "watch": "tsc --w",
     "prestart": "npm run build",
