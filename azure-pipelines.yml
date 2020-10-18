@@ -50,9 +50,17 @@ stages:
     - task: CopyFiles@2
       inputs:
         Contents: |
-          src/**/*.json
+          $(System.DefaultWorkingDirectory)/**/*.json
           node_modules/**
-        TargetFolder: 'bin'
+        TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
+        CleanTargetFolder: true
+        OverWrite: true
+
+    - task: CopyFiles@2
+      inputs:
+        Contents: |
+          $(System.DefaultWorkingDirectory)/**/*.json
+        TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
         CleanTargetFolder: true
         OverWrite: true
 
