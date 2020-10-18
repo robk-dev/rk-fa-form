@@ -16,7 +16,6 @@ FROM mcr.microsoft.com/azure-functions/node:3.0 as production
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-COPY *.json ./
-RUN npm ci --only=prod
-
 COPY --from=development /home/site/wwwroot/bin .
+
+RUN npm ci --only=prod
