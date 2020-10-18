@@ -45,7 +45,7 @@ stages:
       inputs:
         Contents: |
           node_modules/**
-        TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
+        TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
         OverWrite: true
 
     - task: ArchiveFiles@2
