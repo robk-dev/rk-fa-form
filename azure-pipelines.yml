@@ -7,17 +7,11 @@ trigger:
 - main
 
 variables:
-
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '34fadf61-aa84-47a9-978c-adb4a08c6b2e'
 
-  # Function app name
   functionAppName: 'rk-fa-form'
- 
-  # Environment name
   environmentName: 'rk-fa-form'
- 
-  # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
 stages:
@@ -46,23 +40,6 @@ stages:
         npm ci
         npm run build:prod
       displayName: 'Prepare binaries'
-
-        # cp node_modules bin
-        # cp ./**/*.json bin
-
-    # - task: CopyFiles@2
-    #   inputs:
-    #     Contents: |
-    #       node_modules/**
-    #     TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
-    #     OverWrite: true
-
-    # - task: CopyFiles@2
-    #   inputs:
-    #     Contents: |
-    #       $(System.DefaultWorkingDirectory)/**/*.json
-    #     TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
-    #     OverWrite: true
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
