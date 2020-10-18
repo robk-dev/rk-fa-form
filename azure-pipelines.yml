@@ -49,10 +49,13 @@ stages:
 
     - task: CopyFiles@2
       inputs:
-        Contents: 'src/**/*.json'
+        Contents: |
+          src/**/*.json'
+          node_modules/**
         TargetFolder: 'bin'
         CleanTargetFolder: true
         OverWrite: true
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
