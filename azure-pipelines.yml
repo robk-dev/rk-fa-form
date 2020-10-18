@@ -45,21 +45,23 @@ stages:
     - script: |
         npm ci
         npm run build:prod
+        cp node_modules bin
+        cp **/*.json bin
       displayName: 'Prepare binaries'
 
-    - task: CopyFiles@2
-      inputs:
-        Contents: |
-          node_modules/**
-        TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
-        OverWrite: true
+    # - task: CopyFiles@2
+    #   inputs:
+    #     Contents: |
+    #       node_modules/**
+    #     TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
+    #     OverWrite: true
 
-    - task: CopyFiles@2
-      inputs:
-        Contents: |
-          $(System.DefaultWorkingDirectory)/**/*.json
-        TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
-        OverWrite: true
+    # - task: CopyFiles@2
+    #   inputs:
+    #     Contents: |
+    #       $(System.DefaultWorkingDirectory)/**/*.json
+    #     TargetFolder: '$(System.DefaultWorkingDirectory)/bin'
+    #     OverWrite: true
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
