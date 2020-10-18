@@ -50,7 +50,6 @@ stages:
     - task: CopyFiles@2
       inputs:
         Contents: |
-          $(System.DefaultWorkingDirectory)/**/*.json
           node_modules/**
         TargetFolder: '$(System.DefaultWorkingDirectory)/bin/node_modules'
         CleanTargetFolder: true
