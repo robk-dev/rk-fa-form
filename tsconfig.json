@@ -1,18 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "outDir": "bin",
-    "rootDir": "./src",
-    "sourceMap": true,
-    "strict": false
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": [
-    "src/**/*.json",
     "src/**/*.ts"
-  ],
-  "exclude": [
-    "**/node_modules",
-    "./**/*.spec.ts"
   ]
 }

@@ -1,6 +1,10 @@
-*.js.map
-*.ts
 .git*
 .vscode
-local.settings.json
+src
 test
+scripts
+local.settings.json
+*.ts
+*.md
+azure-pipelines.yml
+.github
